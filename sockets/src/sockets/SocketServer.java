@@ -9,7 +9,40 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Vector;
 
-public class SocketServer {
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.WindowConstants;
+import javax.swing.border.EmptyBorder;
+
+public class SocketServer extends JFrame {
+    
+    JTextField pantalla;
+    
+     public SocketServer() {
+		super();
+		setSize(500, 500);
+		setTitle("SocketClient");
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		setResizable(false);
+
+		
+		JPanel panel = (JPanel) this.getContentPane();
+		panel.setLayout(new BorderLayout());
+
+		pantalla = new JTextField("0", 20);
+		pantalla.setBorder(new EmptyBorder(4, 4, 4, 4));
+		pantalla.setFont(new Font("Arial", Font.BOLD, 25));
+		pantalla.setHorizontalAlignment(JTextField.RIGHT);
+		pantalla.setEditable(true);
+		pantalla.setBackground(Color.WHITE);
+		panel.add("North", pantalla);
+
+		validate();
+	}
  
    public static void main(String args[]) {
  
